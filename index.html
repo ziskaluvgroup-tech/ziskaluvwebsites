@@ -9,7 +9,11 @@
 <meta property="og:description" content="Professional websites for small businesses with clear packages and a simple order process." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.ziskaluvwebsites.com/" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://www.ziskaluvwebsites.com/" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta property="og:image" content="https://www.ziskaluvwebsites.com/assets/website-hero.webp" />
+<meta property="og:image:alt" content="A sample business website shown on a laptop and phone" />
 <style>
 :root{
   --bg:#07111f;
@@ -122,6 +126,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 48px;color:#9fb0c2}.foote
 @media(max-width:620px){
   .container{width:min(100% - 26px,1160px)}.nav{height:68px}.brand .name{font-size:14px}h1{font-size:46px;letter-spacing:-1.8px}.hero{padding:66px 0 50px}.hero p{font-size:17px}.cards,.portfolio,.pricing,.process,.stats{grid-template-columns:1fr}.price-card.featured{transform:none}.section{padding:68px 0}.section-head h2{font-size:34px}.cta{padding:28px}.cta h2{font-size:30px}.mock-hero{grid-template-columns:1fr}.mock-art{height:110px}.mock-cards{grid-template-columns:1fr}.float-badge{right:8px;bottom:18px}.hero-actions .btn{width:100%}.request-form{grid-template-columns:1fr}.request-form .full{grid-column:auto}
 }
+.hero-photo{margin:0;position:relative;border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:var(--shadow);background:#102235}.hero-photo img{display:block;width:100%;height:430px;object-fit:cover;object-position:46% center}.hero-photo figcaption{padding:16px 20px;font-size:13px;font-weight:700;color:#dce8f3}.hero-grid{gap:40px}.pricing{grid-template-columns:repeat(4,minmax(0,1fr))}.price-card{padding:26px 22px}.price{font-size:35px}.price-card .btn{width:100%}.features{min-height:190px}.btn:focus-visible,a:focus-visible{outline:3px solid var(--accent2);outline-offset:5px}.hp-field{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.btn:disabled{opacity:.6;cursor:wait}.form-status[data-state="error"]{color:#ffd0c8}.form-status[data-state="success"]{color:#a3f3d9}section[id]{scroll-margin-top:90px}@media(max-width:1100px){.pricing{grid-template-columns:repeat(2,minmax(0,1fr))}.price-card.featured{transform:none}}@media(max-width:620px){.pricing{grid-template-columns:1fr}.hero-photo img{height:auto;aspect-ratio:1.45;object-fit:cover}.features{min-height:0}.hero-grid{gap:30px}.nav .btn{padding:10px 12px;font-size:12px}.brand small{font-size:9px}.price{font-size:38px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -160,22 +165,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 48px;color:#9fb0c2}.foote
         <span><i class="check">✓</i> Full handover after payment</span>
       </div>
     </div>
-    <div class="browser" aria-label="Sample website design mockup">
-      <div class="browser-shell">
-        <div class="browser-top"><i></i><i></i><i></i></div>
-        <div class="mock-nav"><span class="mock-logo">NORTHLINE HOME SERVICES</span><span class="mock-menu">SERVICES &nbsp; ABOUT &nbsp; CONTACT</span></div>
-        <div class="mock-hero">
-          <div><h3>Reliable service. Professional results.</h3><p>A clean, modern service-business website that makes the next step obvious.</p><span class="mock-button">REQUEST AN ESTIMATE</span></div>
-          <div class="mock-art"></div>
-        </div>
-        <div class="mock-cards">
-          <div class="mock-card"><b>Service One</b><span></span><span></span></div>
-          <div class="mock-card"><b>Service Two</b><span></span><span></span></div>
-          <div class="mock-card"><b>Service Three</b><span></span><span></span></div>
-        </div>
-      </div>
-      <div class="float-badge">Built to look good on phone + desktop</div>
-    </div>
+    <figure class="hero-photo"><img src="/assets/website-hero.webp" width="1672" height="941" alt="Laptop and phone displaying a sample home-services website" fetchpriority="high"><figcaption>Designed for your business. Ready for every screen.</figcaption></figure>
   </div>
 </section>
 
@@ -256,7 +246,8 @@ footer{border-top:1px solid var(--line);padding:34px 0 48px;color:#9fb0c2}.foote
   <div class="container">
     <div class="cta request-wrap">
       <div><h2>Request your website.</h2><p>Fill out the form below to request your website.</p></div>
-      <form class="request-form" id="website-request-form">
+      <form class="request-form" id="website-request-form" method="post" action="/api/website-request">
+        <div class="hp-field" aria-hidden="true"><label>Leave this blank<input name="companyWebsite" tabindex="-1" autocomplete="off"></label></div>
         <label>Business Name<input name="businessName" required autocomplete="organization"></label>
         <label>Contact Name<input name="contactName" required autocomplete="name"></label>
         <label>Email<input name="email" type="email" required autocomplete="email"></label>
@@ -280,9 +271,46 @@ footer{border-top:1px solid var(--line);padding:34px 0 48px;color:#9fb0c2}.foote
   </div>
 </footer>
 <script>
-document.getElementById('website-request-form').addEventListener('submit', function (event) {
+const form = document.getElementById('website-request-form');
+const status = document.getElementById('form-status');
+let requestId = crypto.randomUUID();
+document.querySelectorAll('.price-card .btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const label = button.closest('.price-card').querySelector('h3').textContent;
+    const select = form.elements.websitePackage;
+    const option = Array.from(select.options).find(item => item.text.startsWith(label + ' —'));
+    if (option) select.value = option.value;
+  });
+});
+form.addEventListener('submit', async function(event) {
   event.preventDefault();
-  document.getElementById('form-status').textContent = 'Your request could not be sent. Please contact us using the email link below.';
+  if (!form.reportValidity()) return;
+  const button = form.querySelector('button[type="submit"]');
+  if (button.disabled) return;
+  button.disabled = true;
+  button.textContent = 'Sending…';
+  status.dataset.state = '';
+  status.textContent = 'Sending your request…';
+  try {
+    const payload = Object.fromEntries(new FormData(form));
+    payload.requestId = requestId;
+    const response = await fetch('/api/website-request', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload), signal: AbortSignal.timeout(20000)
+    });
+    const result = await response.json();
+    if (!response.ok || !result.success) throw new Error(result.error || 'Your request could not be sent. Please try again or contact us below.');
+    status.dataset.state = 'success';
+    status.textContent = 'Thank you! Your request has been sent. We’ll be in touch to discuss your website.';
+    form.reset();
+    requestId = crypto.randomUUID();
+  } catch (error) {
+    status.dataset.state = 'error';
+    status.textContent = error.name === 'TimeoutError' ? 'Your request could not be confirmed. Please try again or contact us below.' : (error.message || 'Your request could not be sent. Please contact us below.');
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Submit Website Request';
+  }
 });
 </script>
 </body>
