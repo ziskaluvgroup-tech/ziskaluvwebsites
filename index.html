@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ziska Luv Websites | Professional Websites for Small Businesses</title>
+<meta name="description" content="Professional, mobile-friendly websites for small businesses from Ziska Luv Websites. Starter packages from $199." />
+<meta property="og:title" content="Ziska Luv Websites | Professional Websites for Small Businesses" />
+<meta property="og:description" content="Professional websites for small businesses with clear packages and a simple order process." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.ziskaluvwebsites.com/" />
+<meta name="twitter:card" content="summary" />
+<style>
+:root{
+  --bg:#07111f;
+  --bg2:#0b1728;
+  --card:#0f2137;
+  --card2:#132944;
+  --text:#f7fbff;
+  --muted:#a9b7c7;
+  --line:rgba(255,255,255,.10);
+  --accent:#2ed3b7;
+  --accent2:#65a8ff;
+  --warm:#ffb86c;
+  --shadow:0 28px 70px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#06101d 0%,#081522 55%,#091829 100%);color:var(--text);line-height:1.55}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.nav-wrap{position:sticky;top:0;z-index:50;background:rgba(6,16,29,.80);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+.logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#03101d;font-weight:900;box-shadow:0 10px 30px rgba(46,211,183,.22)}
+.brand small{display:block;color:var(--muted);font-size:11px;font-weight:600;margin-top:1px;letter-spacing:.8px;text-transform:uppercase}
+.nav-links{display:flex;gap:22px;align-items:center;color:#d8e2ef;font-size:14px}
+.nav-links a:hover{color:white}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:14px;padding:13px 18px;font-weight:800;border:1px solid transparent;transition:.2s ease;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#53e7cd);color:#03101d;box-shadow:0 14px 30px rgba(46,211,183,.22)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(46,211,183,.30)}
+.btn-secondary{border-color:var(--line);background:rgba(255,255,255,.04);color:white}
+.btn-secondary:hover{background:rgba(255,255,255,.08)}
+.hero{padding:92px 0 72px;overflow:hidden;position:relative}
+.hero:before{content:"";position:absolute;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(101,168,255,.22),rgba(101,168,255,0) 68%);right:-90px;top:20px;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:58px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#d8fff8;background:rgba(46,211,183,.10);border:1px solid rgba(46,211,183,.24);padding:8px 11px;border-radius:999px;font-size:13px;font-weight:800;margin-bottom:20px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(46,211,183,.10)}
+h1{font-size:clamp(46px,6vw,76px);line-height:.98;margin:0 0 22px;letter-spacing:-2.8px;max-width:780px}
+.gradient-text{background:linear-gradient(90deg,#ffffff,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--muted);max-width:680px;margin:0 0 30px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.trust-row{display:flex;gap:22px;flex-wrap:wrap;margin-top:28px;color:#c9d4e2;font-size:13px}
+.trust-row span{display:flex;align-items:center;gap:7px}
+.check{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:rgba(46,211,183,.12);color:var(--accent);font-size:12px;font-weight:900}
+.browser{position:relative;background:#edf5fb;border-radius:24px;padding:13px;box-shadow:var(--shadow);transform:perspective(1000px) rotateY(-4deg) rotateX(2deg)}
+.browser-shell{background:#fff;border-radius:17px;overflow:hidden;color:#152437;min-height:510px}
+.browser-top{height:42px;background:#e7eef5;display:flex;align-items:center;padding:0 14px;gap:7px}
+.browser-top i{width:10px;height:10px;border-radius:50%;background:#aebdca}
+.mock-nav{display:flex;justify-content:space-between;padding:18px 24px;border-bottom:1px solid #edf1f4;align-items:center}
+.mock-logo{font-size:14px;font-weight:900}.mock-menu{display:flex;gap:16px;font-size:10px;color:#67788a}
+.mock-hero{padding:34px 26px 28px;background:linear-gradient(135deg,#f8fbff 0%,#eefbf8 100%);display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center}
+.mock-hero h3{font-size:30px;line-height:1.02;margin:0 0 10px;letter-spacing:-1.3px}.mock-hero p{font-size:11px;color:#607184;margin:0 0 14px}
+.mock-button{display:inline-block;background:#0a1a2e;color:white;padding:9px 12px;border-radius:8px;font-size:9px;font-weight:800}
+.mock-art{height:150px;border-radius:18px;background:linear-gradient(135deg,#2ed3b7,#65a8ff);position:relative;overflow:hidden}
+.mock-art:before,.mock-art:after{content:"";position:absolute;border-radius:18px;background:rgba(255,255,255,.45)}
+.mock-art:before{width:92px;height:110px;right:18px;top:20px}.mock-art:after{width:56px;height:70px;left:20px;bottom:20px}
+.mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:20px 24px 26px}
+.mock-card{border:1px solid #e6edf3;border-radius:12px;padding:14px;height:110px;background:#fff}
+.mock-card b{font-size:10px}.mock-card span{display:block;height:6px;background:#eef3f7;border-radius:4px;margin-top:9px}.mock-card span:nth-child(3){width:70%}
+.float-badge{position:absolute;right:-24px;bottom:38px;background:#0f2137;color:white;border:1px solid var(--line);box-shadow:var(--shadow);padding:13px 16px;border-radius:14px;font-size:12px;font-weight:800}
+.section{padding:88px 0}
+.section-head{max-width:760px;margin-bottom:36px}.section-head h2{font-size:42px;line-height:1.05;margin:0 0 12px;letter-spacing:-1.6px}.section-head p{color:var(--muted);margin:0;font-size:17px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.stat{padding:24px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035)}
+.stat strong{font-size:28px;display:block}.stat span{color:var(--muted);font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(180deg,rgba(19,41,68,.84),rgba(12,28,47,.95));border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(46,211,183,.18),rgba(101,168,255,.20));border:1px solid rgba(255,255,255,.08);font-size:20px;margin-bottom:18px}
+.card h3{margin:0 0 8px;font-size:21px}.card p{color:var(--muted);margin:0;font-size:14px}
+.portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{background:#f7fbff;border-radius:22px;padding:10px;color:#132238;box-shadow:0 16px 45px rgba(0,0,0,.22)}
+.project-screen{border-radius:15px;overflow:hidden;background:white;border:1px solid #e6edf3}
+.project-top{height:28px;background:#edf3f8;display:flex;align-items:center;gap:5px;padding:0 10px}.project-top span{width:7px;height:7px;border-radius:50%;background:#bbc7d2}
+.project-visual{height:210px;padding:18px;display:flex;flex-direction:column;justify-content:space-between}
+.v1{background:linear-gradient(140deg,#eef8ff,#f7ffff)}.v2{background:linear-gradient(140deg,#fff7ec,#fff)}.v3{background:linear-gradient(140deg,#f4efff,#ffffff)}
+.visual-bar{display:flex;justify-content:space-between;font-size:10px;font-weight:900}.visual-title{font-size:26px;line-height:1.02;font-weight:900;letter-spacing:-1px;max-width:180px}.visual-pill{width:96px;height:26px;border-radius:999px;background:#132238}.v2 .visual-pill{background:#9f6537}.v3 .visual-pill{background:#6246a7}
+.project-meta{padding:14px 8px 4px}.project-meta strong{display:block;font-size:15px}.project-meta span{font-size:12px;color:#6f7c89}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.price-card{border:1px solid var(--line);border-radius:24px;padding:28px;background:rgba(255,255,255,.035);position:relative}
+.price-card.featured{background:linear-gradient(180deg,rgba(46,211,183,.10),rgba(255,255,255,.045));border-color:rgba(46,211,183,.42);transform:translateY(-8px)}
+.tag{position:absolute;right:18px;top:18px;background:var(--accent);color:#04111d;font-size:11px;font-weight:900;padding:6px 9px;border-radius:999px}.price-card h3{font-size:21px;margin:0 0 10px}.price{font-size:40px;font-weight:900;letter-spacing:-1.4px}.price small{font-size:13px;color:var(--muted);font-weight:600}.price-card p{color:var(--muted);font-size:14px}.features{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:10px}.features li{display:flex;gap:9px;font-size:14px;color:#d7e2ef}.features li:before{content:"✓";color:var(--accent);font-weight:900}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{border:1px solid var(--line);border-radius:20px;padding:24px;background:rgba(255,255,255,.03)}.num{font-size:12px;color:var(--accent);font-weight:900;letter-spacing:1.2px}.step h3{margin:8px 0 7px;font-size:18px}.step p{margin:0;color:var(--muted);font-size:13px}
+.cta{padding:38px;border-radius:28px;background:linear-gradient(135deg,#153152,#123e48 58%,#164d44);border:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:30px;align-items:center;box-shadow:var(--shadow)}.cta h2{font-size:36px;margin:0 0 8px;letter-spacing:-1.2px}.cta p{margin:0;color:#c9d8e6;max-width:620px}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}.faq-item{border:1px solid var(--line);border-radius:18px;padding:22px;background:rgba(255,255,255,.025)}.faq-item h3{font-size:16px;margin:0 0 7px}.faq-item p{font-size:13px;color:var(--muted);margin:0}
+footer{border-top:1px solid var(--line);padding:34px 0 48px;color:#9fb0c2}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}.footer-grid strong{color:white}.contact-lines{display:grid;gap:4px;font-size:13px;text-align:right}
+.mobile-menu{display:none}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}.browser{transform:none;max-width:680px}.nav-links{display:none}.mobile-menu{display:inline-flex}.cards,.portfolio,.pricing{grid-template-columns:1fr 1fr}.process,.stats{grid-template-columns:1fr 1fr}.faq{grid-template-columns:1fr}.cta{flex-direction:column;align-items:flex-start}.footer-grid{flex-direction:column}.contact-lines{text-align:left}
+}
+@media(max-width:620px){
+  .container{width:min(100% - 26px,1160px)}.nav{height:68px}.brand .name{font-size:14px}h1{font-size:46px;letter-spacing:-1.8px}.hero{padding:66px 0 50px}.hero p{font-size:17px}.cards,.portfolio,.pricing,.process,.stats{grid-template-columns:1fr}.price-card.featured{transform:none}.section{padding:68px 0}.section-head h2{font-size:34px}.cta{padding:28px}.cta h2{font-size:30px}.mock-hero{grid-template-columns:1fr}.mock-art{height:110px}.mock-cards{grid-template-columns:1fr}.float-badge{right:8px;bottom:18px}.hero-actions .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<header class="nav-wrap">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Ziska Luv Websites home">
+      <span class="logo">Z</span>
+      <span class="name">Ziska Luv Websites<small>A Ziska Luv Group service</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#work">Website Styles</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="btn btn-primary">Request a Website</a>
+    </nav>
+    <a class="mobile-menu btn btn-primary" href="#contact">Get Started</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Professional websites for small businesses</div>
+      <h1>Turn your business into a <span class="gradient-text">professional online presence.</span></h1>
+      <p>We design clear, modern, mobile-friendly websites that help small businesses look established, explain what they offer, and make it easy for customers to call, email, or request service.</p>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn btn-primary">See Website Packages</a>
+        <a href="#work" class="btn btn-secondary">See Design Styles</a>
+      </div>
+      <div class="trust-row">
+        <span><i class="check">✓</i> Mobile-ready</span>
+        <span><i class="check">✓</i> Clear pricing</span>
+        <span><i class="check">✓</i> Private review before launch</span>
+        <span><i class="check">✓</i> Full handover after payment</span>
+      </div>
+    </div>
+    <div class="browser" aria-label="Sample website design mockup">
+      <div class="browser-shell">
+        <div class="browser-top"><i></i><i></i><i></i></div>
+        <div class="mock-nav"><span class="mock-logo">NORTHLINE HOME SERVICES</span><span class="mock-menu">SERVICES &nbsp; ABOUT &nbsp; CONTACT</span></div>
+        <div class="mock-hero">
+          <div><h3>Reliable service. Professional results.</h3><p>A clean, modern service-business website that makes the next step obvious.</p><span class="mock-button">REQUEST AN ESTIMATE</span></div>
+          <div class="mock-art"></div>
+        </div>
+        <div class="mock-cards">
+          <div class="mock-card"><b>Service One</b><span></span><span></span></div>
+          <div class="mock-card"><b>Service Two</b><span></span><span></span></div>
+          <div class="mock-card"><b>Service Three</b><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="float-badge">Built to look good on phone + desktop</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>Your website should make your business easier to trust.</h2>
+      <p>Every site is built around your actual business, services, customers, and goals — not just a generic template with your name pasted on it.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="icon">✦</div><h3>Business Website Design</h3><p>Professional websites for contractors, cleaning companies, lawn care, restaurants, service businesses, local shops, and more.</p></article>
+      <article class="card"><div class="icon">▣</div><h3>Mobile-Friendly Layout</h3><p>Your site is structured to remain clear and usable across phones, tablets, laptops, and desktop screens.</p></article>
+      <article class="card"><div class="icon">↗</div><h3>Clear Customer Actions</h3><p>Calls, emails, estimate requests, booking links, service areas, and contact information are placed where customers can actually find them.</p></article>
+      <article class="card"><div class="icon">◫</div><h3>Service Pages</h3><p>Separate pages or sections can explain your individual services without overwhelming the homepage.</p></article>
+      <article class="card"><div class="icon">◎</div><h3>Professional Visual Design</h3><p>Modern typography, polished spacing, strong imagery, color consistency, and an overall look that supports your business identity.</p></article>
+      <article class="card"><div class="icon">⚙</div><h3>Optional Care Plan</h3><p>After launch, ongoing site care can be added separately for small text updates, photo changes, site checks, and routine maintenance.</p></article>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>1–7+</strong><span>Pages available depending on scope</span></div>
+      <div class="stat"><strong>50/50</strong><span>Deposit and final-payment structure</span></div>
+      <div class="stat"><strong>$75/mo</strong><span>Optional maintenance plan</span></div>
+      <div class="stat"><strong>100%</strong><span>Client access after final handover</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head">
+      <h2>Different businesses need different website styles.</h2>
+      <p>These are sample visual directions — not fake client projects. Your website concept is designed around the personality and needs of your actual business.</p>
+    </div>
+    <div class="portfolio">
+      <article class="project"><div class="project-screen"><div class="project-top"><span></span><span></span><span></span></div><div class="project-visual v1"><div class="visual-bar"><b>HOME SERVICES</b><span>CONTACT</span></div><div><div class="visual-title">Clean, dependable, local.</div><div class="visual-pill"></div></div></div></div><div class="project-meta"><strong>Service Business</strong><span>Clean • trustworthy • conversion-focused</span></div></article>
+      <article class="project"><div class="project-screen"><div class="project-top"><span></span><span></span><span></span></div><div class="project-visual v2"><div class="visual-bar"><b>ISLAND KITCHEN</b><span>BOOK CATERING</span></div><div><div class="visual-title">Warm, flavorful, inviting.</div><div class="visual-pill"></div></div></div></div><div class="project-meta"><strong>Food & Catering</strong><span>Warm • visual • easy to contact</span></div></article>
+      <article class="project"><div class="project-screen"><div class="project-top"><span></span><span></span><span></span></div><div class="project-visual v3"><div class="visual-bar"><b>CREATIVE STUDIO</b><span>START A PROJECT</span></div><div><div class="visual-title">Modern, bold, polished.</div><div class="visual-pill"></div></div></div></div><div class="project-meta"><strong>Creative / Professional</strong><span>Premium • modern • brand-forward</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-head"><h2>Simple starting prices.</h2><p>Choose the package that fits your business. Final scope is confirmed before work begins.</p></div>
+    <div class="pricing">
+      <article class="price-card"><h3>Starter</h3><div class="price">$199</div><p>A focused starter website for a simple professional presence.</p><ul class="features"><li>One-page website</li><li>Business overview + services</li><li>Contact information</li><li>Mobile-friendly layout</li><li>Private review before launch</li></ul><a href="#contact" class="btn btn-secondary">Choose Starter</a></article>
+      <article class="price-card featured"><span class="tag">POPULAR</span><h3>Business</h3><div class="price">$349</div><p>A stronger multi-section business presence with room to explain your services.</p><ul class="features"><li>Expanded business content</li><li>Services, About + Contact</li><li>Calls-to-action throughout</li><li>Responsive design</li><li>Private review before launch</li></ul><a href="#contact" class="btn btn-primary">Choose Business</a></article>
+      <article class="price-card"><h3>Business Plus</h3><div class="price">$499</div><p>For businesses that need a more complete site and expanded content.</p><ul class="features"><li>Expanded page structure</li><li>More service content</li><li>Professional calls-to-action</li><li>Responsive design</li><li>Private review before launch</li></ul><a href="#contact" class="btn btn-secondary">Choose Business Plus</a></article>
+      <article class="price-card"><h3>Custom</h3><div class="price">From $699</div><p>For advanced features, integrations, or a larger custom structure.</p><ul class="features"><li>Custom page structure</li><li>Advanced forms or integrations</li><li>Expanded functionality</li><li>Quoted scope before work begins</li><li>Private review before launch</li></ul><a href="#contact" class="btn btn-secondary">Discuss Custom</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head"><h2>A clear order process from request to build.</h2><p>Every order is tracked before payment and verified before the build begins.</p></div>
+    <div class="process">
+      <article class="step"><span class="num">01</span><h3>Send Request</h3><p>Tell us which website package you want and provide your business details.</p></article>
+      <article class="step"><span class="num">02</span><h3>Receive Order Number</h3><p>We confirm the request and issue an order number for your website project.</p></article>
+      <article class="step"><span class="num">03</span><h3>Pay by Zelle</h3><p>Send the confirmed payment to Ziska Luv Group using ziskaluvgroup@gmail.com and include your order number.</p></article>
+      <article class="step"><span class="num">04</span><h3>Verification + Receipt</h3><p>We verify the payment, confirm your receipt, and move the approved project into the website build.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Common questions.</h2></div>
+    <div class="faq">
+      <article class="faq-item"><h3>Do I have to buy monthly maintenance?</h3><p>No. Maintenance is optional. Your website does not require a monthly EcoBlu/Ziska Luv maintenance plan just because we designed it.</p></article>
+      <article class="faq-item"><h3>Will I be able to control my website?</h3><p>Yes. After the agreed final payment and handover, you receive the level of ownership/admin access included in your project.</p></article>
+      <article class="faq-item"><h3>Can you redesign an existing business website?</h3><p>Yes. Redesign work can be quoted based on the existing site, content, and what needs to change.</p></article>
+      <article class="faq-item"><h3>Can you make a website for my type of business?</h3><p>Most likely. The design is adapted to the business itself — its services, audience, branding, and customer journey.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="cta">
+      <div><h2>Ready to see what your business could look like online?</h2><p>Contact Ziska Luv Websites to discuss your business and request a private website concept. No full build begins until the scope, price, and agreement are confirmed.</p></div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:ziskaluvgroup@gmail.com?subject=Website%20Request">Email Us</a>
+        <a class="btn btn-secondary" href="tel:+19548267261">Call 954-826-7261</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><div class="brand"><span class="logo">Z</span><span>Ziska Luv Websites<small>A Ziska Luv Group service</small></span></div><p style="max-width:520px;font-size:13px;margin:14px 0 0">Professional website design for businesses that want a cleaner, stronger, easier-to-use online presence.</p></div>
+    <div class="contact-lines"><strong>Contact</strong><a href="mailto:ziskaluvgroup@gmail.com">ziskaluvgroup@gmail.com</a><a href="tel:+19548267261">954-826-7261</a><a href="tel:+19546078817">954-607-8817</a></div>
+  </div>
+</footer>
+</body>
+</html>
