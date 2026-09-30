@@ -7,8 +7,12 @@ module.exports = async function handler(req, res) {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'Method not allowed.' });
   }
-  const origins = ['https://www.ziskaluvwebsites.com', 'https://ziskaluvwebsites.com'];
-  if (!origins.includes(req.headers.origin)) return res.status(403).json({ error: 'Request not allowed.' });
+  const allowedHosts = new Set(['www.ziskaluvwebsites.com', 'ziskaluvwebsites.com']);
+  let originHost = '';
+  try { originHost = new URL(String(req.headers.origin || '')).host.toLowerCase(); } catch {}
+  const requestHost = String(req.headers['x-forwarded-host'] || req.headers.host || '').split(',')[0].trim().toLowerCase();
+  const isAllowedSite = allowedHosts.has(originHost) || (originHost && originHost === requestHost);
+  if (!isAllowedSite) return res.status(403).json({ error: 'Request not allowed.' });
   if (!String(req.headers['content-type'] || '').includes('application/json')) return res.status(415).json({ error: 'Invalid request format.' });
   let body;
   try { body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body; } catch { return res.status(400).json({ error: 'Invalid request.' }); }
