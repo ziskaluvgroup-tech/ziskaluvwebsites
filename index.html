@@ -93,14 +93,23 @@ h1{font-size:clamp(46px,6vw,76px);line-height:.98;margin:0 0 22px;letter-spacing
 .tag{position:absolute;right:18px;top:18px;background:var(--accent);color:#04111d;font-size:11px;font-weight:900;padding:6px 9px;border-radius:999px}.price-card h3{font-size:21px;margin:0 0 10px}.price{font-size:40px;font-weight:900;letter-spacing:-1.4px}.price small{font-size:13px;color:var(--muted);font-weight:600}.price-card p{color:var(--muted);font-size:14px}.features{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:10px}.features li{display:flex;gap:9px;font-size:14px;color:#d7e2ef}.features li:before{content:"✓";color:var(--accent);font-weight:900}
 .process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{border:1px solid var(--line);border-radius:20px;padding:24px;background:rgba(255,255,255,.03)}.num{font-size:12px;color:var(--accent);font-weight:900;letter-spacing:1.2px}.step h3{margin:8px 0 7px;font-size:18px}.step p{margin:0;color:var(--muted);font-size:13px}
 .cta{padding:38px;border-radius:28px;background:linear-gradient(135deg,#153152,#123e48 58%,#164d44);border:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:30px;align-items:center;box-shadow:var(--shadow)}.cta h2{font-size:36px;margin:0 0 8px;letter-spacing:-1.2px}.cta p{margin:0;color:#c9d8e6;max-width:620px}
+.request-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:start}
+.request-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%}
+.request-form label{display:grid;gap:6px;font-size:13px;font-weight:800;color:#e8f2fb}
+.request-form .full{grid-column:1/-1}
+.request-form input,.request-form select,.request-form textarea{width:100%;border:1px solid rgba(255,255,255,.16);background:#091a2b;color:white;border-radius:12px;padding:12px 13px;font:inherit;outline:none}
+.request-form textarea{min-height:120px;resize:vertical}
+.request-form input:focus,.request-form select:focus,.request-form textarea:focus{border-color:var(--accent)}
+.form-note{grid-column:1/-1;color:#a9b7c7;font-size:12px;margin:0}
+.form-status{grid-column:1/-1;font-size:13px;font-weight:700;margin:0}
 .faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}.faq-item{border:1px solid var(--line);border-radius:18px;padding:22px;background:rgba(255,255,255,.025)}.faq-item h3{font-size:16px;margin:0 0 7px}.faq-item p{font-size:13px;color:var(--muted);margin:0}
 footer{border-top:1px solid var(--line);padding:34px 0 48px;color:#9fb0c2}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}.footer-grid strong{color:white}.contact-lines{display:grid;gap:4px;font-size:13px;text-align:right}
 .mobile-menu{display:none}
 @media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr}.browser{transform:none;max-width:680px}.nav-links{display:none}.mobile-menu{display:inline-flex}.cards,.portfolio,.pricing{grid-template-columns:1fr 1fr}.process,.stats{grid-template-columns:1fr 1fr}.faq{grid-template-columns:1fr}.cta{flex-direction:column;align-items:flex-start}.footer-grid{flex-direction:column}.contact-lines{text-align:left}
+  .hero-grid{grid-template-columns:1fr}.browser{transform:none;max-width:680px}.nav-links{display:none}.mobile-menu{display:inline-flex}.cards,.portfolio,.pricing{grid-template-columns:1fr 1fr}.process,.stats{grid-template-columns:1fr 1fr}.faq{grid-template-columns:1fr}.cta{flex-direction:column;align-items:flex-start}.request-wrap{grid-template-columns:1fr}.footer-grid{flex-direction:column}.contact-lines{text-align:left}
 }
 @media(max-width:620px){
-  .container{width:min(100% - 26px,1160px)}.nav{height:68px}.brand .name{font-size:14px}h1{font-size:46px;letter-spacing:-1.8px}.hero{padding:66px 0 50px}.hero p{font-size:17px}.cards,.portfolio,.pricing,.process,.stats{grid-template-columns:1fr}.price-card.featured{transform:none}.section{padding:68px 0}.section-head h2{font-size:34px}.cta{padding:28px}.cta h2{font-size:30px}.mock-hero{grid-template-columns:1fr}.mock-art{height:110px}.mock-cards{grid-template-columns:1fr}.float-badge{right:8px;bottom:18px}.hero-actions .btn{width:100%}
+  .container{width:min(100% - 26px,1160px)}.nav{height:68px}.brand .name{font-size:14px}h1{font-size:46px;letter-spacing:-1.8px}.hero{padding:66px 0 50px}.hero p{font-size:17px}.cards,.portfolio,.pricing,.process,.stats{grid-template-columns:1fr}.price-card.featured{transform:none}.section{padding:68px 0}.section-head h2{font-size:34px}.cta{padding:28px}.cta h2{font-size:30px}.mock-hero{grid-template-columns:1fr}.mock-art{height:110px}.mock-cards{grid-template-columns:1fr}.float-badge{right:8px;bottom:18px}.hero-actions .btn{width:100%}.request-form{grid-template-columns:1fr}.request-form .full{grid-column:auto}
 }
 </style>
 </head>
@@ -234,11 +243,20 @@ footer{border-top:1px solid var(--line);padding:34px 0 48px;color:#9fb0c2}.foote
 
 <section class="section" id="contact">
   <div class="container">
-    <div class="cta">
-      <div><h2>Ready to see what your business could look like online?</h2><p>Send a website request with your business details. Your email app will open with the request already addressed to Ziska Luv Websites.</p></div>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="mailto:ziskaluvgroup@gmail.com?subject=Website%20Request&body=Business%20Name%3A%0AContact%20Name%3A%0AEmail%3A%0AWebsite%20Package%3A%0AType%20of%20Business%3A%0AWhat%20do%20you%20need%20the%20website%20to%20do%3F%3A%0AAdditional%20Details%3A">Start Website Request</a>
-      </div>
+    <div class="cta request-wrap">
+      <div><h2>Request your website.</h2><p>Fill out your business details here. Your request will be sent directly to Ziska Luv Websites once secure email delivery is connected.</p></div>
+      <form class="request-form" id="website-request-form">
+        <label>Business Name<input name="businessName" required autocomplete="organization"></label>
+        <label>Contact Name<input name="contactName" required autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label>Website Package<select name="websitePackage" required><option value="">Choose a package</option><option>Starter — $199</option><option>Business — $349</option><option>Business Plus — $499</option><option>Custom — From $699</option></select></label>
+        <label class="full">Type of Business<input name="businessType" required></label>
+        <label class="full">What do you need the website to do?<textarea name="websiteNeeds" required></textarea></label>
+        <label class="full">Additional Details<textarea name="additionalDetails"></textarea></label>
+        <button class="btn btn-primary full" type="submit">Submit Website Request</button>
+        <p class="form-note">Requests are intended for ziskaluvgroup@gmail.com. No email app is required.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </div>
 </section>
@@ -250,5 +268,11 @@ footer{border-top:1px solid var(--line);padding:34px 0 48px;color:#9fb0c2}.foote
     <div class="contact-lines"><strong>Contact</strong><a href="mailto:ziskaluvgroup@gmail.com">ziskaluvgroup@gmail.com</a></div>
   </div>
 </footer>
+<script>
+document.getElementById('website-request-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  document.getElementById('form-status').textContent = 'Secure direct email delivery is being connected. Your information has not been sent yet.';
+});
+</script>
 </body>
 </html>
