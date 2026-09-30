@@ -265,7 +265,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 48px;color:#9fb0c2}.foote
         <label class="full">What do you need the website to do?<textarea name="websiteNeeds" required></textarea></label>
         <label class="full">Additional Details<textarea name="additionalDetails"></textarea></label>
         <button class="btn btn-primary full" type="submit">Submit Website Request</button>
-        <p class="form-note">Requests are intended for ziskaluvgroup@gmail.com. No email app is required.</p>
+        
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -282,7 +282,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 48px;color:#9fb0c2}.foote
 <script>
 document.getElementById('website-request-form').addEventListener('submit', function (event) {
   event.preventDefault();
-  document.getElementById('form-status').textContent = 'Secure direct email delivery is being connected. Your information has not been sent yet.';
+  document.getElementById('form-status').textContent = 'Your request could not be sent. Please contact us using the email link below.';
 });
 </script>
 </body>
