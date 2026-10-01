@@ -304,6 +304,17 @@ form.addEventListener('submit', async function(event) {
     });
     const result = await response.json();
     if (!response.ok || !result.success) throw new Error(result.error || 'Your request could not be sent. Please try again or contact us below.');
+    // Track confirmed inquiries without sending customer details to Analytics.
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          send_to: 'G-5TFQPRQQ0F',
+          lead_source: 'website_request_form'
+        });
+      }
+    } catch {
+      // Analytics must never interrupt a successful website request.
+    }
     status.dataset.state = 'success';
     status.textContent = 'Thank you! Your request has been sent. We’ll be in touch to discuss your website.';
     form.reset();
