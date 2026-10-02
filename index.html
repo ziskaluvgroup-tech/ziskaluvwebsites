@@ -168,6 +168,11 @@ body{background:#fff}
 footer{background:#071522;color:#afc2d1;border-color:#173143}
 footer .logo{color:#03101d}
 
+/* Keep inquiry labels readable against the navy request panel. */
+#contact .request-form label{color:#f5fbff}
+#contact .request-form input::placeholder,#contact .request-form textarea::placeholder{color:#647580;opacity:1}
+#contact .form-status[data-state="error"]{color:#ffd0c8}
+#contact .form-status[data-state="success"]{color:#a3f3d9}
 </style>
 <meta property="og:image:width" content="1000" />
 <meta property="og:image:height" content="1250" />
@@ -521,13 +526,13 @@ footer{border-top:1px solid var(--line);padding:34px 0 48px;color:#9fb0c2}.foote
       <div><h2>Request your website.</h2><p>Tell us about your business. We’ll discuss the scope and next steps before you commit to a build. Submitting this form does not take payment.</p></div>
       <form class="request-form" id="website-request-form" method="post" action="/api/website-request">
         <div class="hp-field" aria-hidden="true"><label>Leave this blank<input name="companyWebsite" tabindex="-1" autocomplete="off"></label></div>
-        <label>Business Name<input name="businessName" required autocomplete="organization"></label>
-        <label>Contact Name<input name="contactName" required autocomplete="name"></label>
-        <label>Email<input name="email" type="email" required autocomplete="email"></label>
-        <label>Website Package<select name="websitePackage" required><option value="">Choose a package</option><option>Starter — $199</option><option>Business — $349</option><option>Business Plus — $499</option><option>Custom — From $699</option></select></label>
-        <label class="full">Type of Business<input name="businessType" required></label>
-        <label class="full">What do you need the website to do?<textarea name="websiteNeeds" required></textarea></label>
-        <label class="full">Additional Details<textarea name="additionalDetails"></textarea></label>
+        <label>Business name (required)<input name="businessName" required autocomplete="organization" placeholder="e.g., Dixon Home Services"></label>
+        <label>Your full name (required)<input name="contactName" required autocomplete="name" placeholder="e.g., Jane Smith"></label>
+        <label>Email address (required)<input name="email" type="email" required autocomplete="email" placeholder="e.g., jane@example.com"></label>
+        <label>Website package (required)<select name="websitePackage" required><option value="">Choose a package</option><option>Starter — $199</option><option>Business — $349</option><option>Business Plus — $499</option><option>Custom — From $699</option></select></label>
+        <label class="full">Type of business (required)<input name="businessType" required placeholder="e.g., cleaning, catering, construction, or retail"></label>
+        <label class="full">What should your website do? (required)<textarea name="websiteNeeds" required placeholder="Tell us your goals, such as showing services, receiving inquiries, or linking to bookings."></textarea></label>
+        <label class="full">Additional details (optional)<textarea name="additionalDetails" placeholder="Share your location, existing website, preferred timeline, or anything else we should know."></textarea></label>
         <button class="btn btn-primary full" type="submit">Submit Website Request</button>
         
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
