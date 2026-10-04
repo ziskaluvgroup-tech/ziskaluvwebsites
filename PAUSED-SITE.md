@@ -1,0 +1,1 @@
+Website paused at user request on 2026-10-04. Restore index.html and vercel.json from commit f0903ba1cc626771b26f2565dc47d23ee3512629 to resume. All requests, including demo and API routes, currently serve maintenance with HTTP 503. Preserve subsequent approved edits when restoring.
