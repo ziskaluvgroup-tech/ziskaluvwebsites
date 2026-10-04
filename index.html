@@ -176,6 +176,8 @@ footer .logo{color:#03101d}
 .care-checkout{border-top:1px solid var(--line);margin-top:24px;padding-top:22px}.care-checkout p{margin-bottom:18px!important}#care-payment-status{font-size:13px;margin:12px 0 0!important}
 .care-plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}.care-plans .features{min-height:0}.care-plans .card p{font-size:14px}@media(max-width:700px){.care-plans{grid-template-columns:1fr}}.official-logo{width:64px;height:64px;flex-shrink:0;object-fit:contain;border-radius:8px}.footer-grid .official-logo{width:84px;height:84px}@media(max-width:600px){.official-logo{width:52px;height:52px}.brand{gap:8px}}
 
+/* Desktop, laptop and tablet refinement; preserve existing phone styling. */
+@media(min-width:621px){
 /* Balanced responsive typography and comfortable reading. */
 body{font-size:16px;line-height:1.6}
 h1{font-size:clamp(36px,4.2vw,56px);line-height:1.12;letter-spacing:-1.8px}
@@ -194,15 +196,8 @@ h1{font-size:clamp(36px,4.2vw,56px);line-height:1.12;letter-spacing:-1.8px}
 .features{min-height:0}.price-card p{min-height:0}
 .price-card{display:flex;flex-direction:column}.price-card .btn{margin-top:auto}
 .section{padding:80px 0}.section-head{margin-bottom:32px}
-@media(max-width:620px){
- h1{font-size:36px;letter-spacing:-1px}
- .hero p{font-size:17px}
- .section{padding:56px 0}
- .section-head h2{font-size:28px}
- .cta h2{font-size:28px}
- .nav .btn{font-size:13px}
-}
 
+}
 </style>
 <meta property="og:image:width" content="1000" />
 <meta property="og:image:height" content="1250" />
