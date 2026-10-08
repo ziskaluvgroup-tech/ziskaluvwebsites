@@ -1,17 +1,3 @@
 {
-  "routes": [
-    {
-      "src": "/assets/ziska-luv-websites-official-logo.webp",
-      "dest": "/assets/ziska-luv-websites-official-logo.webp"
-    },
-    {
-      "src": "/.*",
-      "dest": "/maintenance.html",
-      "status": 503,
-      "headers": {
-        "Cache-Control": "no-store",
-        "Retry-After": "3600"
-      }
-    }
-  ]
+  "headers": [{"source": "/(.*)", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]}]
 }
