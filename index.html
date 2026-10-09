@@ -205,7 +205,19 @@ h1{font-size:clamp(36px,4.2vw,56px);line-height:1.12;letter-spacing:-1.8px}
 <meta name="twitter:image" content="https://www.ziskaluvwebsites.com/assets/social-preview.jpg" />
 <meta name="twitter:title" content="Ziska Luv Websites | Websites for Small Businesses" />
 <meta name="twitter:description" content="Mobile-friendly websites from $199. Explore our demos and clear packages." />
-</head>
+<style id="gentle-motion">
+.hero{position:relative;isolation:isolate}.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 20% 30%,var(--motion-glow,#2ed3b726),transparent 60%),radial-gradient(ellipse at 85% 65%,var(--motion-glow2,#4095e91c),transparent 55%);background-size:140% 140%;animation:ambient-drift 18s ease-in-out infinite alternate}
+@keyframes ambient-drift{from{background-position:0% 20%}to{background-position:100% 80%}}
+.hero-photo,.hero .photo{animation:gentle-float 8s ease-in-out infinite}
+@keyframes gentle-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.motion-toggle{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;margin-top:16px;font:inherit;font-size:12px;font-weight:600;border:1px solid currentColor;border-radius:999px;color:inherit;background:transparent;cursor:pointer}.motion-toggle:focus-visible{outline:3px solid #268cec;outline-offset:4px}.motion-toggle::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.motion-paused .hero::before,.motion-paused .hero-photo,.motion-paused .hero .photo{animation-play-state:paused}
+.motion-reveal{transition:opacity .65s ease,transform .65s ease}.motion-pending{opacity:0;transform:translateY(14px)}.motion-paused .motion-pending{opacity:1;transform:none}
+.card,.price-card,.project-album,.dish-card{transition:box-shadow .25s ease,transform .25s ease}
+@media(hover:hover) and (pointer:fine){.card:hover,.price-card:hover,.project-album:hover,.dish-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px #102e3a16}}
+@media(max-width:760px){.hero-photo,.hero .photo{animation:none}}
+@media(prefers-reduced-motion:reduce){.hero::before,.hero-photo,.hero .photo{animation:none!important}.motion-reveal,.card,.price-card,.project-album,.dish-card{transition:none!important}.motion-pending{opacity:1;transform:none}.card:hover,.price-card:hover,.project-album:hover,.dish-card:hover{transform:none}.motion-toggle{display:none}}
+</style></head>
 <body>
 <header class="nav-wrap">
   <div class="container nav">
@@ -737,5 +749,11 @@ form.addEventListener('submit', async function(event) {
 </script>
 
 
-</body>
+<script id="gentle-motion-controls">
+(()=>{const reduced=matchMedia('(prefers-reduced-motion: reduce)');let paused=false;try{paused=localStorage.getItem('site-motion-paused')==='true'}catch{}
+const hero=document.querySelector('.hero');if(!hero)return;const button=document.createElement('button');button.type='button';button.className='motion-toggle';button.setAttribute('aria-label','Pause decorative motion');
+const holder=hero.querySelector('.hero-actions,.actions')||hero.querySelector('p')?.parentElement||hero;holder.append(button);
+const apply=()=>{document.documentElement.classList.toggle('motion-paused',paused||reduced.matches);button.textContent=paused?'Resume motion':'Pause motion';button.setAttribute('aria-label',paused?'Resume decorative motion':'Pause decorative motion');button.setAttribute('aria-pressed',String(paused));};button.addEventListener('click',()=>{paused=!paused;try{localStorage.setItem('site-motion-paused',String(paused))}catch{}apply()});reduced.addEventListener('change',apply);apply();
+if(!reduced.matches&&!paused&&'IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('motion-pending');observer.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('main .section').forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add('motion-reveal','motion-pending');observer.observe(el)}});window.addEventListener('beforeprint',()=>document.querySelectorAll('.motion-pending').forEach(e=>e.classList.remove('motion-pending')))}
+})();</script></body>
 </html>
